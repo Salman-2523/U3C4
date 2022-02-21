@@ -1,0 +1,19 @@
+#container{
+    display: flex;
+    height: 700px;
+    /* border: 1px solid black; */
+  }
+  #sidebar{
+    flex: 2;
+    border: 1px solid black;
+  }
+  #main{
+    flex: 8;
+    border: 1px solid black;
+    
+  }
+  img{
+    height: 500px;
+    width: 650px;
+    margin-left: 16rem;
+  }

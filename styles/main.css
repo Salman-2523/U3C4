@@ -1,0 +1,21 @@
+#container{
+    display: flex;
+    height: 700px;
+    /* border: 1px solid black; */
+  }
+  #sidebar{
+    flex: 2;
+    border: 1px solid black;
+  }
+  #main{
+    flex: 8;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    overflow: scroll;
+  }
+  img{
+    height: 300px;
+    width: 350px;
+  }

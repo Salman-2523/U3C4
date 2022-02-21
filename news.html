@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/news.css">
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <!--DO NOT CHANGE THIS ID's-->
+        <!--Show the clicked article in detailed format here ONLY-->
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module" >
+
+  import sidebar from './components/sidebar.js'
+
+  let sidebar_div = document.getElementById('sidebar')
+  sidebar_div.innerHTML = sidebar()
+
+  let detailed_arr = JSON.parse(localStorage.getItem('article'))
+  let main_div = document.getElementById('main')
+  detailed_arr.map((el)=>{
+    let div = document.createElement('div')
+
+    let img = document.createElement('img')
+    img.src = el.img 
+
+    let title = document.createElement('h3')
+    title.textContent = el.title
+
+    let date = document.createElement('p')
+    date.textContent = el.data 
+
+    let source = document.createElement('p')
+    source.textContent = el.source 
+
+    let content = document.createElement('p')
+    content.textContent = el.content
+
+    div.append(img,title,content,source,date)
+    main_div.append(div)
+  })
+
+</script>
+
